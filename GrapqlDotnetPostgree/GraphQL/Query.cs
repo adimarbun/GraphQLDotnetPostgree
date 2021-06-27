@@ -13,6 +13,8 @@ namespace GrapqlDotnetPostgree.GraphQL
     {
  
         [UseDbContext(typeof(AppDbContext))]
+        [UseFiltering]
+        [UseSorting]
         public IQueryable<Platforms> GetPlatforms([ScopedService] AppDbContext context)
         {
             return context.Platforms;
@@ -20,6 +22,8 @@ namespace GrapqlDotnetPostgree.GraphQL
 
 
         [UseDbContext(typeof(AppDbContext))]
+        [UseFiltering]
+        [UseSorting]
         public IQueryable<Commands> GetCommands([ScopedService] AppDbContext context)
         {
             return context.Commands;
